@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-# Operator Precedence Grammar (No epsilon, no adjacent non-terminals)
+
 grammar = {
     'E': ['E+T', 'T'],
     'T': ['T*F', 'F'],
@@ -11,7 +11,6 @@ grammar = {
 def compute_leading(grammar):
     leading = defaultdict(set)
     
-    # Iterate until sets stabilize (Fixed-Point Algorithm)
     while True:
         updated = False
         
