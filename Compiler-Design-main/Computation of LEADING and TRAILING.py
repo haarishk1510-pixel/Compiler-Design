@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-# --- 1. Define Grammar ---
 # Operator Precedence Grammar (No epsilon, no adjacent non-terminals)
 grammar = {
     'E': ['E+T', 'T'],
@@ -8,7 +7,7 @@ grammar = {
     'F': ['(E)', 'i']
 }
 
-# --- 2. Logic for LEADING Sets ---
+
 def compute_leading(grammar):
     leading = defaultdict(set)
     
@@ -42,7 +41,7 @@ def compute_leading(grammar):
             
     return leading
 
-# --- 3. Logic for TRAILING Sets ---
+
 def compute_trailing(grammar):
     trailing = defaultdict(set)
     
@@ -75,15 +74,14 @@ def compute_trailing(grammar):
             
     return trailing
 
-# --- 4. Main Execution ---
 if __name__ == "__main__":
     print(f"Grammar: {grammar}\n")
     
-    # Compute
+   
     leading_sets = compute_leading(grammar)
     trailing_sets = compute_trailing(grammar)
     
-    # Display Results
+ 
     print(f"{'Non-Terminal':<15} {'LEADING Set':<20} {'TRAILING Set'}")
     print("-" * 60)
     
